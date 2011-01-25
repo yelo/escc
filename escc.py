@@ -12,12 +12,14 @@ class escapeColors:
     the available modes and colors hides inside the
     codes[] dictionary.
 
-    Ex: import escc
+    Example:
+        #!/usr/bin/env python
+        import escc
 
         tc = escc.escapeColors()
         tc.textcolor(bg="BLUE", fgmode="BLINK", fg="GREEN")
         print("This is just another sample string")
-        tc.reset() 
+        tc.reset()
 
     This would print the sample string in green on a blue
     background, and it would also blink the text.
