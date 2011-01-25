@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # A simple wrapper for linux (POSIX?) color escape sequences
-# to-do: exceptions, make it failsafe
+# to-do: check up error handling guidelines, if there's anything like it.
 # yelo@yaoi.se
 import sys
 
