@@ -5,20 +5,24 @@
 import sys
 
 class escapeColors:
-    """This is just a small utility to get
-       colored output with the aid of escape sequences,
-       the available modes and colors hides inside the
-       CODES[] array.
+    """Get colored output with escape sequences.
 
-       Ex: import escc
+    This is just a small utility to get
+    colored output with the aid of escape sequences,
+    the available modes and colors hides inside the
+    CODES[] array.
 
-           tc = escc.escapeColors()
-           tc.textcolor(BG="BLUE", FGMODE="BLINK", FG="GREEN")
-           print("This is just another sample string")
-           tc.reset() 
+    Ex: import escc
 
-       This would print the sample string in green on a blue
-       background, and it would also blink the text."""
+        tc = escc.escapeColors()
+        tc.textcolor(BG="BLUE", FGMODE="BLINK", FG="GREEN")
+        print("This is just another sample string")
+        tc.reset() 
+
+    This would print the sample string in green on a blue
+    background, and it would also blink the text.
+
+    """
 
     def __init__(self):
         self.ESC = "["

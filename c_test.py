@@ -12,7 +12,5 @@ def main():
     print("BAKGRUND!")
     tc.reset()
 
-    print(tc.__doc__)
-
 if __name__ == "__main__":
     main()
