@@ -4,6 +4,25 @@ Author: Jimmy Kumpulainen (yelo at yaoi dot se)
 
 TO-DO: exceptions, make it failsafe
 
+Available modes:
+    * Reset / Normal(?)
+    * Bright
+    * Dim
+    * Underline
+    * Blink
+    * Reverse
+    * Hidden
+
+Available colors:
+    * Black
+    * Red
+    * Green
+    * Yellow
+    * Blue
+    * Magenta
+    * Cyan
+    * White
+
 Ex: import escc
 
     tc = escc.escapeColors()

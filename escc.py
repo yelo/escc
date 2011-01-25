@@ -10,7 +10,7 @@ class escapeColors:
     This is just a small utility to get
     colored output with the aid of escape sequences,
     the available modes and colors hides inside the
-    codes[] array.
+    codes[] dictionary.
 
     Ex: import escc
 
