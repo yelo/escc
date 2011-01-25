@@ -10,12 +10,12 @@ class escapeColors:
     This is just a small utility to get
     colored output with the aid of escape sequences,
     the available modes and colors hides inside the
-    CODES[] array.
+    codes[] array.
 
     Ex: import escc
 
         tc = escc.escapeColors()
-        tc.textcolor(BG="BLUE", FGMODE="BLINK", FG="GREEN")
+        tc.textcolor(bg="BLUE", fgmode="BLINK", fg="GREEN")
         print("This is just another sample string")
         tc.reset() 
 
@@ -25,8 +25,8 @@ class escapeColors:
     """
 
     def __init__(self):
-        self.ESC = "["
-        self.CODES = {"RESET": 0,
+        self.esc = "["
+        self.codes = {"RESET": 0,
                       "BRIGHT": 1,
                       "DIM": 2,
                       "UNDERLINE": 3,
@@ -43,19 +43,21 @@ class escapeColors:
                       "CYAN": 6,
                       "WHITE": 7}
 
-    def textcolor(self, BGMODE="RESET", FGMODE="RESET", BG=False, FG="WHITE"):
-        self.FGMODE = self.CODES[FGMODE]
-        self.FG = self.CODES[FG] + 30
-        self.BGCHECK = BG
-        if self.BGCHECK == False:
+    def textcolor(self, bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE"):
+        self.fgmode = self.codes[fgmode]
+        self.fg = self.codes[fg] + 30
+        self.bgcheck = bg
+
+        if self.bgcheck == False:
             sys.stdout.write("{}{};{}m"
-                .format(self.ESC, self.FGMODE, self.FG))
+                .format(self.esc, self.fgmode, self.fg))
         else:
-            self.BGMODE = self.CODES[BGMODE]
-            self.BG = self.CODES[BG] + 40
+            self.bgmode = self.codes[bgmode]
+            self.bg = self.codes[bg] + 40
+
             sys.stdout.write("{}{};{}m{}{};{}m"
-                .format(self.ESC, self.FGMODE, self.FG, self.ESC,
-                        self.BGMODE, self.BG))
+                .format(self.esc, self.fgmode, self.fg, self.esc,
+                        self.bgmode, self.bg))
 
     def reset(self):
-        sys.stdout.write("{}{}m".format(self.ESC, self.CODES["RESET"]))
+        sys.stdout.write("{}{}m".format(self.esc, self.codes["RESET"]))

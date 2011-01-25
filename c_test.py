@@ -4,11 +4,11 @@ import escc
 def main():
     tc = escc.escapeColors()
 
-    tc.textcolor(FG="YELLOW")
+    tc.textcolor(fg="YELLOW")
     print("FÄRG!")
     tc.reset()
 
-    tc.textcolor(BG="BLUE")
+    tc.textcolor(bg="BLUE")
     print("BAKGRUND!")
     tc.reset()
 
