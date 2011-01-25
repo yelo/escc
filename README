@@ -21,7 +21,9 @@ Available colors:
     * Cyan
     * White
 
-Ex: import escc
+Example:
+    #!/usr/bin/env python
+    import escc
 
     tc = escc.escapeColors()
     tc.textcolor(bg="BLUE", fgmode="BLINK", fg="GREEN")
