@@ -5,7 +5,7 @@ Author: Jimmy Kumpulainen (yelo at yaoi dot se)
 TO-DO: exceptions, make it failsafe
 
 Available modes:
-    * Reset / Normal(?)
+    * Reset (Default)
     * Bright
     * Dim
     * Underline
