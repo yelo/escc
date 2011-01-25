@@ -2,6 +2,8 @@ Silly silly escape sequence wrapper
 
 Author: Jimmy Kumpulainen (yelo at yaoi dot se)
 
+TO-DO: exceptions, make it failsafe
+
 Ex: import escc
 
     tc = escc.escapeColors()
@@ -12,4 +14,4 @@ Ex: import escc
 In a perfect world this would print the sample string in green with a
 blue background, and make the text blink, then reset the output to normal.
 
-TO-DO: exceptions, make it failsafe
+Feel free to use and abuse it!
