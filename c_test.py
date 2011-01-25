@@ -17,7 +17,5 @@ def main():
     print("We even have a fancy mixed mode!")
     tc.reset()
 
-    tc.modes()
-
 if __name__ == "__main__":
     main()

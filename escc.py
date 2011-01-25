@@ -44,9 +44,41 @@ class escapeColors:
                       "WHITE": 7}
 
     def textcolor(self, bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE"):
+
+        self.bgcheck = bg
+
+        self.bgmode = bgmode
+        self.fgmode = fgmode
+        self.bg = bg
+        self.fg = fg
+
+        # I don't know if this is a good way to handle invalid
+        # colors and modes, maybe it's prefered to let the user
+        # handle exceptions themselves? I Have to check this up somewhere.
+        #
+        # if self.fgmode in self.codes:
+        #     pass
+        # else:
+        #     escapeColors().fail(self.fgmode)
+        #
+        # if self.bgmode in self.codes:
+        #     pass
+        # else:
+        #     escapeColors().fail(self.bgmode)
+        #
+        # if self.fg in self.codes:
+        #   pass
+        # else:
+        #     escapeColors().fail(self.fg)
+        #
+        # if self.bg:
+        #     if self.bg in self.codes:
+        #         pass
+        #     else:
+        #         escapeColors().fail(self.bg)
+
         self.fgmode = self.codes[fgmode]
         self.fg = self.codes[fg] + 30
-        self.bgcheck = bg
 
         if self.bgcheck == False:
             sys.stdout.write("{}{};{}m"
@@ -61,3 +93,8 @@ class escapeColors:
 
     def reset(self):
         sys.stdout.write("{}{}m".format(self.esc, self.codes["RESET"]))
+
+    def fail(self, error):
+        self.error = error
+        print("{} is not a valid option.".format(self.error))
+        sys.exit()
