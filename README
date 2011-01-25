@@ -1,16 +1,15 @@
-This is just a small utility to get
-colored output with the aid of escape sequences,
-the available modes and colors hides inside the
-CODES[] array.
+Silly silly escape sequence wrapper
+
+Author: Jimmy Kumpulainen (yelo at yaoi dot se)
 
 Ex: import escc
 
     tc = escc.escapeColors()
-    tc.textcolor(BG="BLUE", FGMODE="BLINK", FG="GREEN")
+    tc.textcolor(bg="BLUE", fgmode="BLINK", fg="GREEN")
     print("This is just another sample string")
     tc.reset()
 
-This would print the sample string in green on a blue
-background, and it would also blink the text.
+In a perfect world this would print the sample string in green with a
+blue background, and make the text blink, then reset the output to normal.
 
 TO-DO: exceptions, make it failsafe
