@@ -45,8 +45,6 @@ class escapeColors:
 
     def textcolor(self, bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE"):
 
-        self.bgcheck = bg
-
         self.bgmode = bgmode
         self.fgmode = fgmode
         self.bg = bg
@@ -80,16 +78,16 @@ class escapeColors:
         self.fgmode = self.codes[fgmode]
         self.fg = self.codes[fg] + 30
 
-        if self.bgcheck == False:
-            sys.stdout.write("{}{};{}m"
-                .format(self.esc, self.fgmode, self.fg))
-        else:
+        if bg:
             self.bgmode = self.codes[bgmode]
             self.bg = self.codes[bg] + 40
 
             sys.stdout.write("{}{};{}m{}{};{}m"
-                .format(self.esc, self.fgmode, self.fg, self.esc,
-                        self.bgmode, self.bg))
+            .format(self.esc, self.fgmode, self.fg, self.esc,
+                    self.bgmode, self.bg))
+        else:
+            sys.stdout.write("{}{};{}m"
+            .format(self.esc, self.fgmode, self.fg))
 
     def reset(self):
         sys.stdout.write("{}{}m".format(self.esc, self.codes["RESET"]))
