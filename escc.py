@@ -30,8 +30,8 @@ class escapeColors:
                       "BRIGHT": 1,
                       "DIM": 2,
                       "UNDERLINE": 3,
-                      "BLINK": 4,
-                      "REVERSE": 5,
+                      "BLINK": 5,
+                      "REVERSE": 7,
                       "HIDDEN": 8,
 
                       "BLACK": 0,
