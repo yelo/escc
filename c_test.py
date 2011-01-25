@@ -5,11 +5,15 @@ def main():
     tc = escc.escapeColors()
 
     tc.textcolor(fg="YELLOW")
-    print("FÄRG!")
+    print("Text-color!")
     tc.reset()
 
     tc.textcolor(bg="BLUE")
-    print("BAKGRUND!")
+    print("Background-color!")
+    tc.reset()
+
+    tc.textcolor(bgmode="DIM", fg="BLUE", bg="YELLOW")
+    print("We even have mixed-mode!")
     tc.reset()
 
 if __name__ == "__main__":
