@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# just some nasty examples of how to use it
 import escc
 
 def main():
