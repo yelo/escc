@@ -44,7 +44,6 @@ class escapeColors:
                       "WHITE": 7}
 
     def textcolor(self, bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE"):
-
         self.bgmode = bgmode
         self.fgmode = fgmode
         self.bg = bg
@@ -75,24 +74,23 @@ class escapeColors:
         #     else:
         #         escapeColors().fail(self.bg)
 
-        self.fgmode = self.codes[fgmode]
-        self.fg = self.codes[fg] + 30
+        self.bgmode = self.codes[bgmode]
+        self.fgmode = self.codes[self.fgmode]
+        self.fg = self.codes[self.fg] + 30
 
         if bg:
-            self.bgmode = self.codes[bgmode]
             self.bg = self.codes[bg] + 40
-
-            sys.stdout.write("{}{};{}m{}{};{}m"
+            sys.stdout.write("{0}{1};{2}m{3}{4};{5}m"
             .format(self.esc, self.fgmode, self.fg, self.esc,
                     self.bgmode, self.bg))
         else:
-            sys.stdout.write("{}{};{}m"
+            sys.stdout.write("{0}{1};{2}m"
             .format(self.esc, self.fgmode, self.fg))
 
     def reset(self):
-        sys.stdout.write("{}{}m".format(self.esc, self.codes["RESET"]))
+        sys.stdout.write("{0}{1}m".format(self.esc, self.codes["RESET"]))
 
     def fail(self, error):
         self.error = error
-        print("{} is not a valid option.".format(self.error))
+        print("{0} is not a valid option.".format(self.error))
         sys.exit()
