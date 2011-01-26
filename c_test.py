@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Just some nasty examples of how to use it.
+# Just some nasty sample output.
 import escc
 from random import choice
 
