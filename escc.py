@@ -33,7 +33,7 @@ class escapeColors:
     """
 
     def __init__(self):
-        self.esc = "["
+        self.esc = "\033["
         self.codes = {"RESET": 0,
                       "BRIGHT": 1,
                       "DIM": 2,

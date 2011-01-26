@@ -1,23 +1,32 @@
 #!/usr/bin/env python
 # Just some nasty examples of how to use it.
 import escc
+from random import choice
 
 def main():
     tc = escc.escapeColors()
 
-    print(tc.__doc__)
+    colors = ["BLACK", "RED", "GREEN", "YELLOW",
+              "BLUE", "MAGENTA", "CYAN", "WHITE"]
 
-    tc.textcolor(fg="YELLOW")
-    print("Text color!")
-    tc.reset()
+    modes = ["RESET", "BRIGHT", "DIM", "UNDERLINE",
+             "BLINK", "REVERSE", "HIDDEN"]
 
-    tc.textcolor(bg="BLUE")
-    print("Background color!")
-    tc.reset()
+    for item in colors:
+        tc.textcolor(fgmode="RESET", fg=item)
+        print("{0}".format(item))
+        tc.reset()
 
-    tc.textcolor(bgmode="DIM", fg="BLUE", bg="YELLOW")
-    print("We even have a fancy mixed mode!")
-    tc.reset()
+    for item in colors:
+        tc.textcolor(bgmode="RESET", bg=item)
+        print("{0}".format(item))
+        tc.reset()
+
+    for item in modes:
+        tc.textcolor(bgmode=item, fgmode=item,
+                     fg="RED", bg="BLACK")
+        print("Happy happy fun mixed mode!")
+        tc.reset()
 
 if __name__ == "__main__":
     main()
