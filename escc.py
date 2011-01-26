@@ -4,7 +4,7 @@
 # yelo@yaoi.se
 import sys
 
-class escapeColors:
+class escapeColors(object):
     """Get colored output with escape sequences.
 
     This is just a small utility to get
