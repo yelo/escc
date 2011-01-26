@@ -22,11 +22,10 @@ def main():
         print("{0}".format(item))
         tc.reset()
 
-    for item in modes:
-        tc.textcolor(bgmode=item, fgmode=item,
-                     fg="RED", bg="BLACK")
-        print("Happy happy fun mixed mode!")
-        tc.reset()
+    tc.textcolor(bgmode=choice(modes), fgmode=choice(modes),
+                 fg="RED", bg="BLACK")
+    print("Happy happy fun mixed mode!")
+    tc.reset()
 
 if __name__ == "__main__":
     main()
