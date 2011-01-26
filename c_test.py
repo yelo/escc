@@ -5,6 +5,8 @@ import escc
 def main():
     tc = escc.escapeColors()
 
+    print(tc.__doc__)
+
     tc.textcolor(fg="YELLOW")
     print("Text color!")
     tc.reset()

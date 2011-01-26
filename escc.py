@@ -12,6 +12,12 @@ class escapeColors:
     the available modes and colors hides inside the
     codes-dictionary.
 
+    Available modes: RESET, BRIGHT, DIM, UNDERLINE
+                     BLINK, REVERSE, HIDDEN
+
+    Available colors: BLACK, RED, GREEN YELLOW
+                      BLUE, MAGENTA, CYAN, WHITE
+
     Example:
         #!/usr/bin/env python
         import escc
