@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Just some nasty sample output.
+# Just some nasty sample output
 import escc
 
 def main():
