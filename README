@@ -22,10 +22,8 @@ Available colors:
 
 Example:
     #!/usr/bin/env python
-    # textcolor(fgmode, bgmode, fg, bg, text)
-    import escc
+    import escc as tc
 
-    tc = escc.escapeColors()
     tc.textcolor(bg="BLUE", fgmode="BLINK", fg="GREEN")
     print("This is just another sample string")
     tc.reset()

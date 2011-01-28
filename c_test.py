@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # Just some nasty sample output
-import escc
+import escc as tc
 
 def main():
-    tc = escc.escapeColors()
-
     colors = ["BLACK", "RED", "GREEN", "YELLOW",
               "BLUE", "MAGENTA", "CYAN", "WHITE"]
 
