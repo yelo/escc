@@ -39,31 +39,6 @@ def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
     fgmode = codes[fgmode]
     fg = codes[fg] + 30
 
-    # I don't know if this is a good way to handle invalid
-    # colors and modes, maybe it's prefered to let the user
-    # handle exceptions themselves? I Have to check this up somewhere.
-    #
-    # if fgmode in codes:
-    #     pass
-    # else:
-    #     fail(fgmode)
-    #
-    # if bgmode in codes:
-    #     pass
-    # else:
-    #     fail(bgmode)
-    #
-    # if fg in codes:
-    #   pass
-    # else:
-    #     fail(fg)
-    #
-    # if bg:
-    #     if bg in codes:
-    #         pass
-    #     else:
-    #         fail(bg)
-
     if text:
         if bg:
             bg = codes[bg] + 40
@@ -79,11 +54,9 @@ def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
         else:
             sys.stdout.write("{0}{1};{2}m".format(esc, fgmode, fg))
 
+    except KeyError:
+        pass
+
 def reset():
     """ Reset output to normal """
     sys.stdout.write("{0}{1}m".format(esc, codes["RESET"]))
-
-def fail(error):
-    """ Print an error message if an invalid option is used. """
-    print("{0} is not a valid option.".format(error))
-    sys.exit()
