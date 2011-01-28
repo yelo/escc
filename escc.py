@@ -68,23 +68,22 @@ def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
         if bg:
             bg = codes[bg] + 40
             sys.stdout.write("{0}{1};{2}m{3}{4};{5}m{6}"
-            .format(esc, fgmode, fg, esc, bgmode, bg, text))
+                             .format(esc, fgmode, fg, esc, bgmode, bg, text))
         else:
-            sys.stdout.write("{0}{1};{2}m{3}"
-            .format(esc, fgmode, fg, text))
+            sys.stdout.write("{0}{1};{2}m{3}".format(esc, fgmode, fg, text))
     else:
         if bg:
             bg = codes[bg] + 40
             sys.stdout.write("{0}{1};{2}m{3}{4};{5}m"
             .format(esc, fgmode, fg, esc, bgmode, bg))
         else:
-            sys.stdout.write("{0}{1};{2}m"
-            .format(esc, fgmode, fg))
+            sys.stdout.write("{0}{1};{2}m".format(esc, fgmode, fg))
 
 def reset():
     """ Reset output to normal """
     sys.stdout.write("{0}{1}m".format(esc, codes["RESET"]))
 
 def fail(error):
+    """ Print an error message if an invalid option is used. """
     print("{0} is not a valid option.".format(error))
     sys.exit()
