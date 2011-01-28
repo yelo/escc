@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # A simple wrapper for linux (POSIX?) color escape sequences
+# Author: Jimmy Kumpulainen <jimmy.kumpulainen@gmail.com>
+#
 # to-do: check up error handling guidelines, if there's anything like it.
-# yelo@yaoi.se
+
 import sys
 
 esc = "\033["
@@ -23,7 +25,7 @@ codes = {"RESET": 0,
               "WHITE": 7}
 
 def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
-    """Get colored output with escape sequences.
+    """ Get colored output with escape sequences.
 
     Available modes: RESET, BRIGHT, DIM, UNDERLINE
                      BLINK, REVERSE, HIDDEN
