@@ -34,6 +34,7 @@ def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
                       BLUE, MAGENTA, CYAN, WHITE
 
     """
+
     bgmode = codes[bgmode]
     fgmode = codes[fgmode]
     fg = codes[fg] + 30
