@@ -23,6 +23,7 @@ Available colors:
 
 Example:
     #!/usr/bin/env python
+    # textcolor(fgmode, bgmode, fg, bg, text)
     import escc
 
     tc = escc.escapeColors()
