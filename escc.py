@@ -54,9 +54,6 @@ def textcolor(bgmode="RESET", fgmode="RESET", bg=False, fg="WHITE", text=False):
         else:
             sys.stdout.write("{0}{1};{2}m".format(esc, fgmode, fg))
 
-    except KeyError:
-        pass
-
 def reset():
     """ Reset output to normal """
     sys.stdout.write("{0}{1}m".format(esc, codes["RESET"]))
